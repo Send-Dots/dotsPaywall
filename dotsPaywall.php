@@ -3,7 +3,7 @@
  * Plugin Name: Dots Paywall
  * Plugin URI: https://senddots.com/
  * Description: This plugin creates a paywall with Dots.
- * Version: 0.2.1
+ * Version: 0.2.2
  * Author: Dots.
  * License: CC0
  */
@@ -132,7 +132,7 @@ function DOTS_invoiceChecker() {
             echo 1;
             die();
         } else {
-            echo $status;
+            echo esc_html($status);
         }
     }
     echo 0;
@@ -173,7 +173,7 @@ function dotsPaywall_options_page() {
                     </label>
                 </th>
                 <td>
-                    <input type="text" id="dots_username" name="dots_username" value="<?php echo get_option('dots_username'); ?>" placeholder="username" />
+                    <input type="text" id="dots_username" name="dots_username" value="<?php echo esc_attr(get_option('dots_username')); ?>" placeholder="username" />
                 </td>
             </tr>
         </table>
